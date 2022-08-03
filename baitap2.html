@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Viết một function có tên numberOneTriangle(). Hàm có tham số truyền vào là một số nguyên trong khoảng (1-10) có tác dụng in ra hình tam giác. 
+        VD: input: numberOneTriangle(4) -->
+        <div class="Triangle"></div>
+        <script>
+            function numberOneTriangle(n) {
+                let str = "";
+                if(n > 10 || n < 1){
+                    return "Nhập số nguyên từ 1 đến 10";
+                }
+                for (let i = 1; i <= n; i++) {
+                    for (let j = 1; j <= i; j++) {
+                        str += "*" + " ";
+                    }
+                    str += "<br>";
+                }
+                return str;
+            }
+            document.write(numberOneTriangle(0));
+        </script>
+</body>
+</html>

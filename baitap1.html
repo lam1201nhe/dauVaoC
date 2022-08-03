@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .calculation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        height: 400px;
+      }
+      .submit-btn {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lets try with a = 1; b= 10 or a >= 10</h1>
+    <h1>
+      Không biết tại sao đặt a là 2 -> 9 không thể nhận được giá trị của a =(((
+    </h1>
+    <div class="calculation">
+      <form action="" method="post">
+        <label for="a">Nhập a: </label>
+        <input id="a" type="text" />
+        <div><br /></div>
+        <label for="b">Nhập b: </label>
+        <input id="b" type="text" />
+        <div class="submit-btn">
+          <br />
+          <input type="submit" id="submit" />
+        </div>
+      </form>
+    </div>
+    <script>
+      let a = document.getElementById("a");
+      let b = document.getElementById("b");
+      let submit = document.getElementById("submit");
+
+      submit.addEventListener("click", function (event) {
+        event.preventDefault();
+        let aValue = a.value;
+        let bValue = b.value;
+        let str = "";
+        if (aValue < 0 || bValue < 0) {
+          alert("a và b phải là số nguyên dương");
+        } else if (aValue > bValue) {
+          alert("a phải nhỏ hơn b");
+        } else {
+          for (let i = aValue; i <= bValue; i++) {
+            console.log(i);
+            if (checkPrime(i)) {
+              str += i + " ";
+            }
+          }
+          alert(
+            `Các số nguyên tố trong khoảng ${aValue} tới ${bValue} lần lượt là: ${str}`
+          );
+        }
+      });
+
+      function checkPrime(n) {
+        var flag = true;
+
+        if (n < 2) {
+          flag = false;
+        } else {
+          for (var i = 2; i < n - 1; i++) {
+            if (n % i == 0) {
+              flag = false;
+              break;
+            }
+          }
+        }
+
+        if (flag == true) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
